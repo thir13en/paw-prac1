@@ -1,9 +1,6 @@
-import { API_URLS } from '/api/endpoints.js';
-
-
 $('document').ready(() => getSingleReservation(location.search.split('=')[1]));
 
-function getSingleReservation(id) {
+const getSingleReservation = (id) => {
 	$('h1').text($('h1').text() + id)
 	$.ajax(
 		API_URLS.reservationsUrlSingle + id,

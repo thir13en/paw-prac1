@@ -5,6 +5,9 @@
 <body>
 <?php require '../components/reservation_detail/reservation_detail.php' ?>
 </body>
-<?php require '../templates/vendor.php' ?>
-<script type="module" src="../components/reservation_detail/reservation_detail.js"></script>
+<?php require '../templates/imports.php' ?>
+<script
+	type="text/javascript"
+	src="../components/reservation_detail/reservation_detail.js"
+></script>
 </html>

@@ -1,5 +1,3 @@
-import { API_URLS } from '/api/endpoints.js';
-
 const tableHeaders = ['nombre', 'apellidos', 'teléfono', 'fecha', 'comensales', 'comentarios'];
 
 $('document').ready(() => getReservations());
@@ -78,25 +76,18 @@ const resetvationsNext24HoursRequest = () => {
 	);
 }
 
-const navigateToDetail = (id) => {
-	location.href = location.origin + '/detail.html?id=' + id;
-}
-
-const clickConnected = () => {
-	console.log('click connected');
-}
-
 const deleteReservation = (id) => {
-	console.log({ "id": id });
 	$.post(
-		deleteReservationUrl,
+		API_URLS.deleteReservationUrl,
 		{ "id": id },
 		function(returnedData) {
-			console.log(returnedData);
-			console.log($('#row_' + id));
 			if (returnedData['message'] === 'reservation deleted') {
 				$('#row_' + id).remove();
 			};
 		}
 	);
+}
+
+const clickConnected = () => {
+	console.log('click connected');
 }

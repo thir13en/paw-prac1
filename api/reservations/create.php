@@ -18,5 +18,5 @@
 	$surnames = $_POST['surnames'];
 	$phone = $_POST['phone'];
 
-	echo json_encode(array('name'=>$data, $data2, $data3));
+	echo json_encode(array('name'=>$data, $surnames, $phone));
 ?>
