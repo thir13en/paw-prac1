@@ -6,6 +6,7 @@
 <?php require 'components/reservation_list/reservation_list.php' ?>
 </body>
 <?php require 'templates/imports.php' ?>
+<script type="text/javascript" src="js/helpers.js"></script>
 <script
 	type="text/javascript"
 	src="components/reservation_list/reservation_list.js"

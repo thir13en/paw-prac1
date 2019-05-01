@@ -6,12 +6,12 @@
 	</div>
 	<div class="row hidden">
 		<div class="col-xs-12">
-			<a href="next24.html">Próximas 24 horas</a>
+			<a href="/views/next24.php">Próximas 24 horas</a>
 		</div>
 	</div>
 	<div class="row" id="reservationsTableContainer">
 		<div class="col-xs-12">
-			<h3>No hay reservas que mostrar</h1>
+			<h3>No hay reservas que mostrar</h3>
 		</div>
 	</div>
 	<div class="row">

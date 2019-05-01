@@ -1,7 +1,6 @@
 <?php
 	header('Access-Control-Allow-Origin: *');
 	header('Content-Type: application/json');
-	header('Access-Control-Methods: POST');
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Methods, Authorization, X-Requested-With');
 
 	include_once '../../config/Database.php';
@@ -19,10 +18,11 @@
 		'surnames'=>$_POST['surnames'],
 		'phone'=>$_POST['phone'],
 		'date'=>$_POST['date'],
-		'guests'=>$_POST['guests']
+		'guests'=>$_POST['guests'],
+		'ID'=>$_GET['id']
 	);
 	// Create reservation
-	if ($reservations->create($data)) {
+	if ($reservations->update($data)) {
 		echo json_encode(array('OK'));
 	} else {
 		echo json_encode(array('KO'));

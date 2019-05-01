@@ -9,10 +9,11 @@
 	$database = new Database();
 	$db = $database->connect();
 
+	$id = json_decode($_GET['id']);
 	// instantiate reservation
 	$reservations = new Reservations($db);
 
-	$result = $reservations->readSingle(8);
+	$result = $reservations->readSingle($id);
 
 	echo json_encode($result->fetch(PDO::FETCH_ASSOC));
 ?>

@@ -81,6 +81,51 @@
 			return $stmt;
 		}
 
+		public function create($data) {
+			$query = 'INSERT INTO reservas(
+				nombre,
+				apellidos,
+				telefono,
+				fecha,
+				comensales
+			) VALUES (\'' .
+				$data['name']. '\', \'' .
+				$data['surnames'] . '\', \'' .
+				$data['phone'] . '\', \'' .
+				$data['date'] . '\', ' .
+				$data['guests'] . ')';
+
+			// prepare statement
+			$stmt = $this->conn->prepare($query);
+
+			if ($stmt->execute()) {
+				return true;
+			} else {
+				printf('Error: %s.\n', $stmt->error);
+				return false;
+			}
+		}
+
+		public function update($data) {
+			$query = 'UPDATE reservas r
+						SET nombre=\'' . $data['name'] . '\',
+							apellidos=\'' . $data['surnames'] . '\',
+							telefono=\'' . $data['phone'] . '\',
+							fecha=\'' . $data['date'] . '\',
+							comensales=' . $data['guests'] . '
+						WHERE r.id=' . $data['ID'];
+
+			// prepare statement
+			$stmt = $this->conn->prepare($query);
+
+			if ($stmt->execute()) {
+				return true;
+			} else {
+				printf('Error: %s.\n', $stmt->error);
+				return false;
+			}
+		}
+
 		public function delete($id) {
 			$query = 'DELETE FROM ' . $this->table . ' WHERE ' . $this->table . '.id = :id';
 
@@ -100,5 +145,6 @@
 				return false;
 			}
 		}
+
 	}
 ?>
